@@ -36,20 +36,8 @@ def greet_page():
     return page, 200, {"Content-Type": "text/html; charset=utf-8"}
 
 
-def parse_port(argv):
-    if len(argv) < 2:
-        return 8080
-    try:
-        return int(argv[1])
-    except ValueError:
-        print(f"Invalid port '{argv[1]}'. Using 8080.")
-        return 8080
-
-
 def main():
-    port = parse_port(sys.argv)
-    print(f"Server running at http://localhost:{port}")
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=80)
 
 
 if __name__ == "__main__":
